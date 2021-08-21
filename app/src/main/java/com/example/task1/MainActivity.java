@@ -30,13 +30,6 @@ public class MainActivity extends AppCompatActivity {
         binding.loginButton.setOnClickListener(x -> this.action());
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        binding.inputUserName.getText().clear();
-        binding.inputPassword.getText().clear();
-        binding.inputUserName.requestFocus();
-    }
 
     public void action() {
         String email = binding.inputUserName.getText().toString();
@@ -49,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Validation if the Failed is Empty or not
     private boolean inputValidation(String email, String pass) {
         if (email.isEmpty()) {
             binding.inputUserName.setError("Fill this Failed is Required!");
@@ -75,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 progressDialog.dismiss();
                 startActivity(new Intent(MainActivity.this, Home.class));
+                finish();
             } else {
                 progressDialog.dismiss();
                 Toast.makeText(MainActivity.this, "Incorrect Password OR Email !!", Toast.LENGTH_SHORT).show();

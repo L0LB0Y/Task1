@@ -5,4 +5,9 @@
     <string name="password">Password</string>
     <string name="welcome">Welcome</string>
     <string name="todo">TODO</string>
+    <string name="decrees">-</string>
+    <string name="increes">+</string>
+    <string name="_0">0</string>
+    <string name="go_to_cart_items">Go To Cart Items</string>
+    <string name="submit_order">Submit Order</string>
 </resources>
